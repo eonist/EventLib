@@ -1,7 +1,6 @@
 import Cocoa
-
 /**
- * TODO: implement the immidiate when its needed. 
+ * TODO: ⚠️️ Implement the immidiate when it's needed.
  * NOTE: origin could in the future be a protocol IInteractiveElement for instance or IInteractive or IInteractiveView
  */
 class MouseEvent:Event{
@@ -13,17 +12,18 @@ class MouseEvent:Event{
     static var enter:String = "mouseEventEnter"
     static var exit:String = "mouseEventExit"
     weak var event:NSEvent?
-    /*var pos:CGPoint*/
-    init(_ event:NSEvent/*_ type:String, *//*_ pos:CGPoint, */, _ origin:NSView/*, _ immediate:AnyObject*/){
-        /*self.pos = pos*/
+    init(_ event:NSEvent, _ origin:NSView){
         self.event = event
-        super.init("", origin/*,immediate*/)
+        super.init("", origin)
     }
 }
 /**
  * Add convenince variables and methods here:
  */
 extension MouseEvent{
+    /**
+     * IMPORTANT: ⚠️️ This is the position unFlipped coordinatespace (aka bottom left in macOs)
+     */
     var loc:CGPoint{return event!.locationInWindow}
     var shiftKey:Bool {return self.event!.shiftKey}/*Convenience*/
     var commandKey:Bool {return self.event!.commandKey}/*Convenience*/
