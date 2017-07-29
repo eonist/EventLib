@@ -2,6 +2,7 @@ import Cocoa
 /**
  * TODO: ⚠️️ Implement the immidiate when it's needed.
  * NOTE: origin could in the future be a protocol IInteractiveElement for instance or IInteractive or IInteractiveView
+ * NOTE: mouseEvent doesnt set the type because they arent propegated through the onEvent call
  */
 class MouseEvent:Event{
     static var over:String = "mouseEventOver"
