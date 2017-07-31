@@ -34,7 +34,7 @@ extension NSEvent {
  * TODO: ⚠️️ You might want to add propegates:Bool flag that blocks further event-propegation etc
  */
 extension NSEvent{
-    typealias CallBack = (NSEvent)->Void
+    typealias CallBack = (NSEvent)->Void//TODO: ⚠️️ Find a more appropriate name than CallBack
     /**
      * EXAMPLE: var monitor:Any?;NSEvent.addMonitor(monitor,.leftMouseDragged) {event in Swift.print(event.type)}
      */
