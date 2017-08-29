@@ -16,12 +16,12 @@ class A:EventSender{
 }
 var a = A()
 func onSomeEvent(event:Event){/*<--Event handler*/
-    if(event.type == Event.update && event.origin === a){
-        print("something happened")
+    if event.assert(.update,origin:a){
+        print("something happened on: \(event.origin) for event type: \(event.type)")
     } 
 }
 a.event = onSomeEvent
-a.doSomething()//Output: something happened
+a.doSomething()//Output: something happened on: A for event type: eventUpdate
 ```
 
 Read about the event system here: http://stylekit.org/blog/2016/02/10/The-event-system/  
